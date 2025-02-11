@@ -18,3 +18,20 @@ function calculateDiscount(price, discountRate) {
 console.log(calculateDiscount(100, 0.2)); // Expected output: "Final Price: $80.00"
 console.log(calculateDiscount(250, 0.15)); // Expected output: "Final Price: $212.50"
 
+
+// Task 3 : Service Fee Calculation
+
+function calculateServiceFee(amount, serviceType) {
+    let serviceFee = 0; // initialize the service fee
+    if (serviceType === "premium") {
+        serviceFee = amount * 0.15; // formula for express service fee
+    } else if (serviceType === "standard") {
+        serviceFee = amount * 0.10; // formula for standard service fee
+    } else if (serviceType === "basic") {
+        serviceFee = amount * 0.05; // formula for basic service fee
+    }
+    return `Service Fee: $${serviceFee.toFixed(2)}`; // return the service fee
+};
+
+console.log(calculateServiceFee(200, "premium")); // Expected output: "Service Fee: $30.00"
+console.log(calculateServiceFee(500, "standard")); // Expected output: "Service Fee: $50.00"
