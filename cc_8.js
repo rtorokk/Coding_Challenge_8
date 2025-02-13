@@ -4,8 +4,8 @@ function calculateSalary(baseSalary, bonus, taxRate) {
     return `Net Salary: $${netSalary.toFixed(2)}`; // return the net salary 
 };  
 
-console.log(calculateSalary(5000, 500, 0.1)); // Expected output: "Net Salary : $5000.00" 
-console.log(calculateSalary(7000, 1000, 0.15)); // Expected output: "Net Salary : $6950.00"
+console.log(calculateSalary(5000, 500, 0.1)); // Expected output: "Net Salary: $4950.00" 
+console.log(calculateSalary(7000, 1000, 0.15)); // Expected output: "Net Salary: $6800.00"
 
 
 // Task 2 : Product Price After Discount
@@ -78,3 +78,23 @@ function filterLargeTransactions(transactions) {
 }
 
 console.log("Large Transactions", filterLargeTransactions(transactions)); // Expected output: [1500, 3200, 2500]
+
+
+// Task 7 : Shopping Cart Tracker
+
+function createCartTracker() {
+    let cart = 0; // initialize the cart total
+    return function(amount) {
+        cart += amount; // add the amount to the cart total
+        return `Cart Total: $${cart.toFixed(2)}`; // return the updated cart total
+    }
+}
+
+const cartTracker = createCartTracker();
+console.log("Total Cart Value:", cartTracker(20)); // Expected output: "Cart Total: $20.00"
+console.log("Total Cart Value:", cartTracker(35)); // Expected output: "Cart Total: $55.00"
+
+
+
+
+
